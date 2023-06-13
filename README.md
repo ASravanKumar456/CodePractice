@@ -59,10 +59,15 @@ Input Arguments:
 
 
 Calling Syntax: 
-1.Sample Command To Run Application Locally on 8 cores
+1.Sample Command To Run Application Locally on 8 cores with uber jar:
       spark-submit --name "TradeExecEngine" --master local[8] --class com.excercise.code.TradeExecution  /home/vagrant/codepractice/jars/TradeExecutionProgram-1.0.0-SNAPSHOT-jar-with-dependencies.jar /home/vagrant/codepractice/input exampleOrders.csv /home/vagrant/codepractice/orderbook orderbook.csv /home/vagrant/codepractice/output tradematch.csv /home/vagrant/codepractice/archive/orderFiles  /home/vagrant/codepractice/archive/orderBooks
-2.Sample Command To Run Application on yarn
-       spark-submit --name "TradeExecEngine" --master yarn --deploy-mode cluster --driver-memory 1g --executory--memory 1g --executor-cores 4 --class com.excercise.code.TradeExecution  /home/vagrant/codepractice/jars/TradeExecutionProgram-1.0.0-SNAPSHOT-jar-with-dependencies.jar /home/vagrant/codepractice/input exampleOrders.csv /home/vagrant/codepractice/orderbook orderbook.csv /home/vagrant/codepractice/output tradematch.csv /home/vagrant/codepractice/archive/orderFiles  /home/vagrant/codepractice/archive/orderBooks
+2.Sample Command To Run Application on yarn with uber jar:
+       spark-submit --name "TradeExecEngine" --master yarn --deploy-mode cluster --driver-memory 1g --executor-memory 1g --executor-cores 4 --class com.excercise.code.TradeExecution  /home/vagrant/codepractice/jars/TradeExecutionProgram-1.0.0-SNAPSHOT-jar-with-dependencies.jar /home/vagrant/codepractice/input exampleOrders.csv /home/vagrant/codepractice/orderbook orderbook.csv /home/vagrant/codepractice/output tradematch.csv /home/vagrant/codepractice/archive/orderFiles  /home/vagrant/codepractice/archive/orderBooks
+
+3.Sample Command to Run with Thin jar:
+spark-submit --name "TradeExecEngine" --master yarn --deploy-mode cluster --driver-memory 1g --executor-memory 1g --executor-cores 4 --packages org.scala-lang:scala-library:2.11.11,org.apache.hadoop:hadoop-common:2.10.0,org.apache.spark:spark-core_2.11:2.4.3,org.apache.spark:spark-sql_2.11:2.4.3 --class com.excercise.code.TradeExecution  /home/vagrant/codepractice/jars/TradeExecutionProgram-1.0.0-SNAPSHOT.jar /home/vagrant/codepractice/input exampleOrders.csv /home/vagrant/codepractice/orderbook orderbook.csv /home/vagrant/codepractice/output tradematch.csv /home/vagrant/codepractice/archive/orderFiles  /home/vagrant/codepractice/archive/orderBooks
+
+
  
 
 
