@@ -293,8 +293,10 @@ Step-11 : Define the "main" function that takes command-line arguments as input.
  **Example 1:**
  
  Input :
+ 
  exampleOrders.csv:
-    1,Steve,1623239770,SELL,72,1550
+ 
+        1,Steve,1623239770,SELL,72,1550
 	2,Ben,1623239771,BUY,8,148
 	3,Steve,1623239772,SELL,24,6612
 	4,Kim,1623239773,SELL,98,435
@@ -317,10 +319,13 @@ Step-11 : Define the "main" function that takes command-line arguments as input.
   
   output:
   closedOrders (tradematch_20230612182400.csv):
+  
 		    5,1,1623239774,72,1550
 		    12,10,1623239781,89,7596
+		    
   orderBook (orderbook.csv) :
-            2,Ben,1623239771,BUY,8,148
+  
+                        2,Ben,1623239771,BUY,8,148
 			3,Steve,1623239772,SELL,24,6612
 			4,Kim,1623239773,SELL,98,435
 			6,Ben,1623239775,SELL,75,6356
@@ -342,7 +347,8 @@ Step-11 : Define the "main" function that takes command-line arguments as input.
     Input  :
     
     orderFile (exampleOrders.csv):
-        21,Jane,1623239790,BUY,98,8312
+    
+                21,Jane,1623239790,BUY,98,8312
 		22,Chris,1623239792,BUY,98,8300
 		23,Willium,1623239793,SELL,38,8000
 		24,Christina,1623239794,BUY,100,9000
@@ -351,7 +357,8 @@ Step-11 : Define the "main" function that takes command-line arguments as input.
 		27,Kiran,1623239796,SELL,38,8650
 		
     orderBook( orderBook.csv from the example1):
-            2,Ben,1623239771,BUY,8,148
+    
+                        2,Ben,1623239771,BUY,8,148
 			3,Steve,1623239772,SELL,24,6612
 			4,Kim,1623239773,SELL,98,435
 			6,Ben,1623239775,SELL,75,6356
@@ -369,13 +376,17 @@ Step-11 : Define the "main" function that takes command-line arguments as input.
 			20,James,1623239789,SELL,68,4260
        
     output :
+    
         closedOrders (tradematch_20230612202054.csv) :
-	        23,7,1623239793,38,7957
+
+	                23,7,1623239793,38,7957
 			21,4,1623239790,98,435
 			22,13,1623239792,98,8302
 			26,25,1623239796,38,8500
+			
 		orderBook(orderbook.csv) :
-		    2,Ben,1623239771,BUY,8,148
+		
+		        2,Ben,1623239771,BUY,8,148
 			3,Steve,1623239772,SELL,24,6612
 			6,Ben,1623239775,SELL,75,6356
 			8,Alex,1623239777,BUY,51,218
