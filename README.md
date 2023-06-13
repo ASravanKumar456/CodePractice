@@ -1,6 +1,6 @@
 
 
-About the Project:
+**About the Project:**
   This project contains the  spark scala code solution for Refinitiv Matching Engine Exercise with the below problem statement
    Refinitiv Matching Engine Exercise
 
@@ -37,16 +37,15 @@ About the Project:
         - Orders won't have the same timestamp
   
 
-Build Tool: Maven
-Dependencies Used : org.scala-lang:scala-library-2.11.11 ,
-                   org.scalatest:scalatest_2.11.3.3.0-SNAP3
-                   org.apache.hadoop:hadoop-common_2.10.0
-                   org.apache.spark:spark-core_2.11.2.4.3
-                   org.apache.spark:spark-sql_2.11.2.3
-Build command: mvn clean package
+**Build Tool:** Maven
+**Dependencies Used :** org.scala-lang:scala-library:2.11.11,
+                   org.apache.hadoop:hadoop-common:2.10.0,
+                   org.apache.spark:spark-sql_2.11:2.4.3
+**Build command:** mvn clean package
 
-JarName : TradeExecutionProgram-1.0.0-SNAPSHOT-jar-with-dependencies.jar
-Input Arguments:
+**UberJarName :** TradeExecutionProgram-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+**ThinJarName:** TradeExecutionProgram-1.0.0-SNAPSHOT.jar
+**Input Arguments:**
             This program takes 7 mandatory arguments as below                                          
              1.ordersFilePath - File path where the order files are present     
              2.Order Filename - Name of the orderFile                        
@@ -58,7 +57,7 @@ Input Arguments:
              8.orderBookArchivalPath - Path where the orderBook files will be archived after processing
 
 
-Calling Syntax: 
+**Calling Syntax:** 
 1.Sample Command To Run Application Locally on 8 cores with uber jar:
       spark-submit --name "TradeExecEngine" --master local[8] --class com.excercise.code.TradeExecution  /home/vagrant/codepractice/jars/TradeExecutionProgram-1.0.0-SNAPSHOT-jar-with-dependencies.jar /home/vagrant/codepractice/input exampleOrders.csv /home/vagrant/codepractice/orderbook orderbook.csv /home/vagrant/codepractice/output tradematch.csv /home/vagrant/codepractice/archive/orderFiles  /home/vagrant/codepractice/archive/orderBooks
 2.Sample Command To Run Application on yarn with uber jar:
@@ -71,13 +70,13 @@ spark-submit --name "TradeExecEngine" --master yarn --deploy-mode cluster --driv
  
 
 
-Prerequisites for Running the Application:
+**Prerequisites for Running the Application:**
 1.JAVA8 Should be installed
 2.Spark 2.4.3 or greater should be installed
 3.Hadoop 2.10 or Higher should be installed (If running on windows then Winutils.exe should be configured to emulate Hadoop on windows)
  
 
-Psuedo code:
+**Psuedo code:**
 Step-1 : Import the required libraries and packages.
 Step-2 : Define an object named "TradeExecution" for the main program.
 Step-3 : Create a Spark session and configure it.
@@ -132,7 +131,7 @@ Step-11 : Define the "main" function that takes command-line arguments as input.
 		i. Merge the closed Orders file to the closedOrdersFilePath received from the command line argument with the given naming pattern.
 
 
-Methods Used in this Program:
+**Methods Used in this Program:**
 1.readCsvFile(filePath:String,Schema:StructType):DataFrame :
            1.Takes filepath and schema as arguments 
            2.Reads the csv file and returns a dataframe with file content
@@ -186,11 +185,11 @@ Methods Used in this Program:
         
 
  
-Method Execution Sequence:
+**Method Execution Sequence:**
  Main -> readCsvFile  ->matchOrders->archiveFile ->mergeFiles 
 
  
-Scenarios Handled in this code:
+**Scenarios Handled in this code:**
  1.Single OrderMatch with in the file (Exactly 1 matching quantity between Buy and Sell Orders)
  2.Multiple OrdersMatch with in the file (1 Or more Buy/Sell records matches with 1 or more Sell/Buy records from the file. Priority will be given on first come first serve basis while matching the records).
  3.Single Buy/Sell Match from Order Book to the Single Sell/Buy Match from input File
@@ -198,9 +197,9 @@ Scenarios Handled in this code:
  5.When multiple matches occurs from Order Book to the Input File then priority will be assigned on First Come First Serve Basis
  6.When a Single Order from Order Book Matches with multiple Orders in Input file then priority will be given on the basis of Best Buy Price and Best Sell Price from Order Book Records Perspective    
  
- Sample Input and Output :
+**Sample Input and Output:**
  
- Example 1:
+ **Example 1:**
  
  Input :
  exampleOrders.csv:
@@ -248,7 +247,7 @@ Scenarios Handled in this code:
 			20,James,1623239789,SELL,68,4260
 			
 			
-Example2:
+**Example2:**
     Input  :
     
     orderFile (exampleOrders.csv):
