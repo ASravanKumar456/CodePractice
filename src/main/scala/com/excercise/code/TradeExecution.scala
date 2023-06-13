@@ -1,11 +1,12 @@
-/***********************************************************************************************************
- * ProgramName:TradeExecution                                                                                                       *
- *                                                                                                         *
- *                                                                                                         *
- *                                                                                                         *
- *                                                                                                         *
- *                                                                                                         *
- **********************************************************************************************************/
+/*****************************************************************************************************************************************************************
+ * ProgramName:TradeExecution                                                                                                                                    *
+ * Description:                                                                                                                                                  *
+ *             The TradeExecution code is responsible for processing trade orders and matching them between an order book and an order file.                     *
+ *              It reads data from CSV files, performs matching operations, and produces output files.                                                           *
+ *              The code is implemented using Spark and Scala.                                                                                                   *
+ *                                                                                                         																											 *
+ ****************************************************************************************************************************************************************/
+
 package com.excercise.code
 import java.util.Calendar
 import java.text.SimpleDateFormat
