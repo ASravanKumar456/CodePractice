@@ -38,9 +38,11 @@
   
 
 **Build Tool:** Maven
+
 **Dependencies Used :** org.scala-lang:scala-library:2.11.11,
                    org.apache.hadoop:hadoop-common:2.10.0,
                    org.apache.spark:spark-sql_2.11:2.4.3
+		   
 **Build command:** mvn clean package
 
 **UberJarName :** TradeExecutionProgram-1.0.0-SNAPSHOT-jar-with-dependencies.jar
